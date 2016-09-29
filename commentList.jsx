@@ -4,19 +4,40 @@ import { Badge } from 'react-bootstrap';
 import moment from "moment";
 
 
+/**
+ * Component to display valid comments
+ * 
+ * @class CommentList
+ * @extends {React.Component}
+ */
 class CommentList extends React.Component {
+  /**
+   * Returns true if a search word is found in the comment string
+   * 
+   * @param {string} comment string to check if it contains 1 or more searchWords
+   * @returns
+   * 
+   * @memberOf CommentList
+   */
   _filterComments(comment) {
     return this.props.searchWords.reduce((prev, searchWord) => {
           return prev && comment.text.toLowerCase().indexOf(searchWord.toLowerCase()) >= 0;
         }, true)
   }
 
+
   render () {
+    
+    // render comments that contain search words
     let commentNodes = this.props.comments
       .filter(this._filterComments, this)
       .map(comment => {
         return (
-          <Comment key={comment.id} author={comment.author} createdAt={moment(comment.created_at).format("h:mm:ss a on MMMM Do YYYY")}  searchWords={this.props.searchWords}>
+          <Comment key={comment.id}
+            author={comment.author}
+            createdAt={moment(comment.created_at).format("h:mm:ss a on MMMM Do YYYY")}
+            searchWords={this.props.searchWords}
+          >
             {comment.text}
           </Comment>
         );
@@ -37,4 +58,5 @@ class CommentList extends React.Component {
   }
 }
 
-export default CommentList;
+
+export default CommentList

@@ -4,6 +4,9 @@ const striptags = require('striptags');
 const Entities = require('html-entities').XmlEntities;
 entities = new Entities();
 
+/**
+ * Personal cli tool to search multiple keywords in a HN post.
+ */
 request("http://hn.algolia.com/api/v1/items/12016568", (error, response, body) => {
 	let comments = JSON.parse(body).children;
 	let lookingFor = comments
