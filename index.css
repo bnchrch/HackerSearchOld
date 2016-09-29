@@ -96,10 +96,14 @@ body {
 }
 
 /* HACKER SEARCH */
+.hackerSearch {
+    padding-top: 30px;
+}
+
 .hackerSearch h1 {
     text-align: center;
     font-family: 'Yesteryear', serif;
     color: #ff6600;
     font-size: 70px;
-    padding-bottom: 10px;
+    padding-bottom: 30px;
 }
