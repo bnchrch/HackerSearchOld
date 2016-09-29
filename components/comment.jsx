@@ -1,5 +1,5 @@
 import React from 'react';
-import { highlightWordsInHtml, getColorFromIndex } from './util.js';
+import { highlightWordsInHtml, getColorFromIndex } from '../tools/util.js';
 
 
 /**

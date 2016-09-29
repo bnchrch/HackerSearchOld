@@ -1,1 +1,1 @@
-import HackerSearch from './hackerSearch.jsx';
+import HackerSearch from './components/hackerSearch.jsx';

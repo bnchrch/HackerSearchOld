@@ -1,6 +1,6 @@
 import React from 'react';
 import { Glyphicon, Label } from 'react-bootstrap';
-import { getColorFromIndex } from './util.js';
+import { getColorFromIndex } from '../tools/util.js';
 
 
 /**
