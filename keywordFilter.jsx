@@ -2,7 +2,7 @@ import React from 'react';
 import Keyword from './keyword.jsx'
 import { FormControl } from 'react-bootstrap';
 
-export default class KeywordFilter extends React.Component {
+class KeywordFilter extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -44,3 +44,5 @@ export default class KeywordFilter extends React.Component {
     );
   }
 }
+
+export default KeywordFilter;

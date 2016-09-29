@@ -2,7 +2,7 @@ import React from 'react';
 import { Glyphicon, Label } from 'react-bootstrap';
 import { getColorFromIndex } from './util.js';
 
-export default class Keyword extends React.Component {
+class Keyword extends React.Component {
   render () {
     let applyBackground = {
       backgroundColor: getColorFromIndex(this.props.index)
@@ -17,3 +17,5 @@ export default class Keyword extends React.Component {
     );
   }
 }
+
+export default Keyword;

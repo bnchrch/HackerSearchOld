@@ -1,7 +1,7 @@
 import React from 'react';
 import { highlightWordsInHtml, getColorFromIndex } from './util.js';
 
-export default class Comment extends React.Component {
+class Comment extends React.Component {
   highlightSearchWords(commentHtml) {
     this.props.searchWords.forEach((searchWord, i) => {
       commentHtml = highlightWordsInHtml(commentHtml, searchWord, getColorFromIndex(i));
@@ -24,3 +24,5 @@ export default class Comment extends React.Component {
     );
   }
 }
+
+export default Comment;
