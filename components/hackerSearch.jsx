@@ -46,11 +46,6 @@ class HackerSearch extends React.Component {
   loadThreadById(id) {
     this.setState({id: id, loading: true, comments: []})
     this.serverRequest = $.get(`http://hn.algolia.com/api/v1/items/${id}`, (result) => {
-        /**
-         * 
-         * 
-         * @param {any} x
-         */
         let comments = result.children.filter(x => x.text);
         this.setState({comments: comments, loading: false});
       });
@@ -91,7 +86,7 @@ class HackerSearch extends React.Component {
             <Fade in={this.state.comments.length > 0}>
               <div>
                 <KeywordFilter keywordsChanged={this.keywordsChanged.bind(this)}/>
-                <CommentList comments={this.state.comments} searchWords={this.state.searchWords}/>
+                <CommentList refresh={() => this.loadThreadById(this.state.id)} comments={this.state.comments} searchWords={this.state.searchWords}/>
               </div>
             </Fade>
             <Spinner hidden={!this.state.loading} spinnerName='double-bounce' noFadeIn={true} />

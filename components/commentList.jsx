@@ -1,6 +1,6 @@
 import Comment from './comment.jsx'
 import React from 'react';
-import { Badge } from 'react-bootstrap';
+import { Badge, Glyphicon } from 'react-bootstrap';
 import moment from "moment";
 
 
@@ -45,7 +45,16 @@ class CommentList extends React.Component {
 
     return (
       <div className="comments">
-        <Badge className="commentCount">{commentNodes.length}</Badge>
+        <Badge className="commentCount refreshButton">
+          <Glyphicon
+            className="glyphicon-white" 
+            glyph="refresh" 
+            onClick={() => this.props.refresh()}
+          />
+        </Badge>
+        <Badge className="commentCount">
+          {commentNodes.length}
+        </Badge>
         <div className="commentList">
           {
             this.props.comments.length > 0 && commentNodes.length === 0

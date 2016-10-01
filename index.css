@@ -60,6 +60,11 @@
     font-size: 15px;
 }
 
+.refreshButton {
+    margin-top: 1px;
+    margin-right: 5px;
+}
+
 .createdAt {
     font-size: 10px; 
     font-style: normal; 
