@@ -22,14 +22,16 @@ class WhosHiringSelect extends React.Component {
     super(props);
     this.state = {
         requestUrl: "http://hn.algolia.com/api/v1/search_by_date?tags=story,author_whoishiring",
-        threads: []
+        threads: [],
+        loading: false
     };
   };
 
 
   componentDidMount() {
+    this.setState({loading: true});
     this.serverRequest = $.get(this.state.requestUrl, (result) => {
-      this.setState({ threads: result.hits})
+      this.setState({ threads: result.hits, loading: false})
     })
   };
 
@@ -44,14 +46,18 @@ class WhosHiringSelect extends React.Component {
       });
 
     return (
-      <Fade in={this.state.threads.length> 0}>
-        <FormGroup className="whosHiringSelect" controlId="formControlsSelect">
-          <FormControl componentClass="select" placeholder="select" ref="userInput" defaultValue="" onChange={this.props.handleSelect}>
-            <option value="" disabled>Select a Who's Hiring thread (e.g. Who is hiring, Who wants to be hired...)</option>
-            { threadOptions }
-          </FormControl>
-        </FormGroup>
-      </Fade>
+      <div>
+        <Fade in={this.state.threads.length> 0}>
+          <FormGroup className="whosHiringSelect" controlId="formControlsSelect">
+            <FormControl componentClass="select" placeholder="select" ref="userInput" defaultValue="" onChange={this.props.handleSelect}>
+              <option value="" disabled>Select a Who's Hiring thread (e.g. Who is hiring, Who wants to be hired...)</option>
+              { threadOptions }
+            </FormControl>
+          </FormGroup>
+        </Fade>
+        <Spinner hidden={!this.state.loading} spinnerName='double-bounce' noFadeIn={true} />
+      </div>
+
     );
   }
 }
