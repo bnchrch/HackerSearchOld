@@ -1,12 +1,11 @@
 {
-    "parserOptions": {
-        "ecmaVersion": 6,
-        "sourceType": "module",
-        "ecmaFeatures": {
-            "jsx": true
-        }
+    "parser": "babel-eslint",
+    "env": {
+        "browser": true,
+        "node": true
     },
+    "extends": "airbnb",
     "rules": {
-        "semi": 2
+        "indent": ["error", 2]
     }
 }

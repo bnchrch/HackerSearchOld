@@ -1,21 +1,20 @@
 import React from 'react';
 import { Glyphicon, Label } from 'react-bootstrap';
-import { getColorFromIndex } from '../tools/util.js';
+import { getColorFromIndex } from '../tools/util';
 
 
 /**
  * Keyword component
- * 
+ *
  * @class Keyword
  * @extends {React.Component}
  */
 class Keyword extends React.Component {
-  render () {
-
+  render() {
     // create a unique background color for each keyword
     // based on their index in the keyword list
-    let applyBackground = {
-      backgroundColor: getColorFromIndex(this.props.index)
+    const applyBackground = {
+      backgroundColor: getColorFromIndex(this.props.index),
     };
 
     return (
@@ -25,8 +24,8 @@ class Keyword extends React.Component {
         </span>
         <a>
           <Glyphicon
-            className="remove glyphicon-white" 
-            glyph="remove-sign" 
+            className="remove glyphicon-white"
+            glyph="remove-sign"
             onClick={() => this.props.onKeyWordRemoval(this.props.text)}
           />
         </a>
@@ -35,5 +34,10 @@ class Keyword extends React.Component {
   }
 }
 
+Keyword.propTypes = {
+  index: React.PropTypes.number.isRequired,
+  text: React.PropTypes.string.isRequired,
+  onKeyWordRemoval: React.PropTypes.func.isRequired,
+};
 
 export default Keyword;

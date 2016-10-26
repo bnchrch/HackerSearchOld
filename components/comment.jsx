@@ -1,17 +1,17 @@
 import React from 'react';
-import { highlightWordsInHtml, getColorFromIndex } from '../tools/util.js';
+import { highlightWordsInHtml, getColorFromIndex } from '../tools/util';
 
 
 /**
  * Comment Component
- * 
+ *
  * @class Comment
  * @extends {React.Component}
  */
 class Comment extends React.Component {
   /**
    * Highlight each search word found in the commentHtml with a unique color
-   * 
+   *
    * @param {string} commentHtml
    * @memberOf Comment
    */
@@ -25,14 +25,14 @@ class Comment extends React.Component {
 
   /**
    * render raw html so that we can hightlight words dynamically
-   * 
+   *
    * @memberOf Comment
    */
-  rawHtml () {
+  rawHtml() {
     return { __html: this.highlightSearchWords(this.props.children) };
-  };
+  }
 
-  render () {
+  render() {
     return (
       <div className="comment">
         <h4 className="commentAuthor">
@@ -44,5 +44,11 @@ class Comment extends React.Component {
   }
 }
 
+Comment.propTypes = {
+  createdAt: React.PropTypes.string,
+  author: React.PropTypes.string,
+  children: React.PropTypes.array.string,
+  searchWords: React.PropTypes.array.string,
+};
 
 export default Comment;
