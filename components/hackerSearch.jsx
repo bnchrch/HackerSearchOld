@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom';
 import { Col, Fade, Grid } from 'react-bootstrap';
 import Spinner from 'react-spinkit';
 import $ from 'jquery';
-import WhosHiringSelect from './whosHiringSelect.jsx'
-import CommentList from './commentList.jsx'
-import KeywordFilter from './keywordFilter.jsx'
+import WhosHiringSelect from './whosHiringSelect.jsx';
+import CommentList from './commentList.jsx';
+import KeywordFilter from './keywordFilter.jsx';
 
 
 /**
@@ -44,7 +44,7 @@ class HackerSearch extends React.Component {
    * @memberOf HackerSearch
    */
   loadThreadById(id) {
-    this.setState({id: id, loading: true, comments: []})
+    this.setState({id: id, loading: true, comments: []});
     this.serverRequest = $.get(`http://hn.algolia.com/api/v1/items/${id}`, (result) => {
         let comments = result.children.filter(x => x.text);
         this.setState({comments: comments, loading: false});
@@ -60,7 +60,7 @@ class HackerSearch extends React.Component {
    * @memberOf HackerSearch
    */
   keywordsChanged(keywords) {
-    this.setState({searchWords: keywords})
+    this.setState({searchWords: keywords});
   }
 
 
@@ -73,7 +73,7 @@ class HackerSearch extends React.Component {
    */
   threadSelected(e) {
     let id = e.target.value;
-    this.loadThreadById(id)
+    this.loadThreadById(id);
   }
 
 

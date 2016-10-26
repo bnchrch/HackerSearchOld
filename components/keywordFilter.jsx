@@ -1,5 +1,5 @@
 import React from 'react';
-import Keyword from './keyword.jsx'
+import Keyword from './keyword.jsx';
 import { FormControl } from 'react-bootstrap';
 
 
@@ -63,7 +63,7 @@ class KeywordFilter extends React.Component {
       return (
         <Keyword text={keyword} key={keyword} index={i} onKeyWordRemoval={this.onKeyWordRemoval.bind(this)} />
       );
-    })
+    });
 
     return (
       <div>
@@ -82,4 +82,4 @@ class KeywordFilter extends React.Component {
 }
 
 
-export default KeywordFilter
+export default KeywordFilter;

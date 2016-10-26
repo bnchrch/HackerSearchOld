@@ -16,5 +16,5 @@ request("http://hn.algolia.com/api/v1/items/12016568", (error, response, body) =
 	lookingFor.forEach(x => {
 		console.log(x);
 		console.log("\n\n\n");
-	})
-})
+	});
+});

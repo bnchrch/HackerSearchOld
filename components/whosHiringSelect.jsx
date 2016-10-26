@@ -31,8 +31,8 @@ class WhosHiringSelect extends React.Component {
   componentDidMount() {
     this.setState({loading: true});
     this.serverRequest = $.get(this.state.requestUrl, (result) => {
-      this.setState({ threads: result.hits, loading: false})
-    })
+      this.setState({ threads: result.hits, loading: false});
+    });
   };
 
 
@@ -63,4 +63,4 @@ class WhosHiringSelect extends React.Component {
 }
 
 
-export default WhosHiringSelect
+export default WhosHiringSelect;

@@ -38,4 +38,4 @@ function highlightWordsInHtml(line, word, color) {
  */
 var getColorFromIndex = _.memoize(index => extractColorFromWheel(baseHighlightColor, colorWheelIncrement, index));
 
-export { getColorFromIndex, highlightWordsInHtml }
+export { getColorFromIndex, highlightWordsInHtml };

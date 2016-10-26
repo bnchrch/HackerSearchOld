@@ -1,4 +1,4 @@
-import Comment from './comment.jsx'
+import Comment from './comment.jsx';
 import React from 'react';
 import { Badge, Glyphicon } from 'react-bootstrap';
 import moment from "moment";
@@ -22,7 +22,7 @@ class CommentList extends React.Component {
   _filterComments(comment) {
     return this.props.searchWords.reduce((prev, searchWord) => {
           return prev && comment.text.toLowerCase().indexOf(searchWord.toLowerCase()) >= 0;
-        }, true)
+        }, true);
   }
 
 
@@ -41,7 +41,7 @@ class CommentList extends React.Component {
             {comment.text}
           </Comment>
         );
-    })
+    });
 
     return (
       <div className="comments">
@@ -68,4 +68,4 @@ class CommentList extends React.Component {
 }
 
 
-export default CommentList
+export default CommentList;

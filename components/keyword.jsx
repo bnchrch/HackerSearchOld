@@ -36,4 +36,4 @@ class Keyword extends React.Component {
 }
 
 
-export default Keyword
+export default Keyword;
