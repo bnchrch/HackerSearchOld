@@ -45,7 +45,7 @@ class HackerSearch extends React.Component {
    */
   loadThreadById(id) {
     this.setState({ id, loading: true, comments: [] });
-    this.serverRequest = $.get(`http://hn.algolia.com/api/v1/items/${id}`, (result) => {
+    this.serverRequest = $.get(`https://hn.algolia.com/api/v1/items/${id}`, (result) => {
       const comments = result.children.filter(x => x.text);
       this.setState({ comments, loading: false });
     });

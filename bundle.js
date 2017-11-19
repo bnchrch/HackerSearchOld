@@ -146,7 +146,7 @@
 	      var _this2 = this;
 
 	      this.setState({ id: id, loading: true, comments: [] });
-	      this.serverRequest = _jquery2.default.get('http://hn.algolia.com/api/v1/items/' + id, function (result) {
+	      this.serverRequest = _jquery2.default.get('https://hn.algolia.com/api/v1/items/' + id, function (result) {
 	        var comments = result.children.filter(function (x) {
 	          return x.text;
 	        });
@@ -51612,7 +51612,7 @@
 	    var _this = _possibleConstructorReturn(this, (WhosHiringSelect.__proto__ || Object.getPrototypeOf(WhosHiringSelect)).call(this, props));
 
 	    _this.state = {
-	      requestUrl: 'http://hn.algolia.com/api/v1/search_by_date?tags=story,author_whoishiring',
+	      requestUrl: 'https://hn.algolia.com/api/v1/search_by_date?tags=story,author_whoishiring',
 	      threads: [],
 	      loading: false
 	    };

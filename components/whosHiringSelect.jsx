@@ -21,7 +21,7 @@ class WhosHiringSelect extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      requestUrl: 'http://hn.algolia.com/api/v1/search_by_date?tags=story,author_whoishiring',
+      requestUrl: 'https://hn.algolia.com/api/v1/search_by_date?tags=story,author_whoishiring',
       threads: [],
       loading: false,
     };
