@@ -4,7 +4,7 @@
   "description": "a react app to help search hacker news posts",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack"
   },
   "author": "Ben Church",
   "license": "ISC",

@@ -2,7 +2,7 @@ import React from 'react';
 import { Badge, Glyphicon } from 'react-bootstrap';
 import moment from 'moment';
 
-import Comment from './comment';
+import Comment from './comment.jsx';
 
 
 /**

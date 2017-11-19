@@ -1,7 +1,7 @@
 import { FormControl } from 'react-bootstrap';
 
 import React from 'react';
-import Keyword from './keyword';
+import Keyword from './keyword.jsx';
 
 
 /**

@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom';
 import { Col, Fade, Grid } from 'react-bootstrap';
 import Spinner from 'react-spinkit';
 import $ from 'jquery';
-import WhosHiringSelect from './whosHiringSelect';
-import CommentList from './commentList';
-import KeywordFilter from './keywordFilter';
+import WhosHiringSelect from './whosHiringSelect.jsx';
+import CommentList from './commentList.jsx';
+import KeywordFilter from './keywordFilter.jsx';
 
 
 /**
